@@ -1,8 +1,13 @@
-import localStorage from "./functions/localStorage.js"
+import { CreateDefaultProject as selectList } from "./functions/createProject.js"
+import saveItemIntoList from "./functions/saveItemIntoList.js"
 
 // create default project and save as JSON
-function showDefaultProject() {
-    localStorage();
+function start() {
+    // select the correct list
+    const list = selectList();
+    saveItemIntoList(list);
+    
+    console.log(list);
 }
 
-showDefaultProject();
+start();
