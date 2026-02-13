@@ -6,8 +6,8 @@ import createItem from "./functions/to-do-item.js"
 // create default project and save as JSON
 function start() {
     // start by createed a default object
-    const list = selectProject().list;
-    const projectName = selectProject().projectName;
+    const list = selectProject("default").list;
+    const projectName = selectProject("default").projectName;
     
     // create a item
     const item1 = createItem("Reading");
