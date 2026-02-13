@@ -1,14 +1,15 @@
+import {selectList, saveList} from "./localStorage.js"
+
 // save todoItem to a list
-function saveAsList(item, list) {
-    // check if item exists
+export default function saveAsList(item, projectName) {
+    // check if item exists in the selected list
+    const list = selectList(projectName);
     const checkExists = list.filter((itemSelected) => itemSelected.title === item.title);
 
+    // push it
+    // save it 
     if (checkExists.length === 0) {
         list.push(item);
+        saveList(projectName, list);
     }
-}
-
-// send the correct list to append item inside
-export default function appendItem(item, list) {
-    saveAsList(item, list);
 }

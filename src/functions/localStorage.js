@@ -1,14 +1,18 @@
 // save the list into Local Storage
-export default function saveList(projectName, list) {
-    let projectListString = localStorage.getItem(projectName);
-    const projectListArray = JSON.parse(projectListString);
-    
-    if (projectListArray.length === 0) {
-        for (let i = 0; i < list.length; i++) {
-            projectListArray.push(list[i]);
-        }
-    }
 
-    projectListString = JSON.stringify(projectListArray);
+// select list
+export function selectList(projectName) {
+    const projectListString = localStorage.getItem(projectName);
+    const projectListArray = JSON.parse(projectListString);
+
+    console.log(projectListString)
+    console.log(projectListArray);
+    return projectListArray;
+}
+
+// save the list
+export function saveList(projectName, list) 
+{
+    const projectListString = JSON.stringify(list);
     localStorage.setItem(projectName, projectListString);
 }

@@ -16,8 +16,7 @@ function createNewProject(projectName) {
 
 // export the list and projectName
 export default function returnList(projectName) {
-    const list = [];
     createNewProject(projectName);
 
-    return {list, projectName};
+    return projectName;
 }
