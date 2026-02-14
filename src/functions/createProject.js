@@ -11,6 +11,7 @@ export default function createNewProject(projectName) {
         const projectListString = JSON.stringify(projectList);
 
         localStorage.setItem(projectName, projectListString);
+        console.log("project created");
     }
 }
 
