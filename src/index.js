@@ -1,6 +1,6 @@
 import createProject from "./functions/createProject.js"
 import {createTodoItem} from "./functions/to-do-item.js"
-import { returnItemId, deleteItem } from "./functions/to-do-list.js";
+import { deleteItem } from "./functions/to-do-list.js"
 
 // create default project and save as JSON
 function start() {
@@ -10,13 +10,7 @@ function start() {
 
     //  item can created if it does not exists before and save
     const item1Title = "Reading";
-    createTodoItem(item1Title, projectName);
-    // delete item
-    deleteItem(projectName, item1Title);
-
-    // second item create
-    const item2Title = "Study";
-    createTodoItem(item2Title, projectName);
+    createTodoItem(item1Title, "Read 5 books", 2025, 12, 10, projectName);
 }
 
 start();
