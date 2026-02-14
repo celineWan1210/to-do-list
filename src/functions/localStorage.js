@@ -10,6 +10,15 @@ export function selectList(projectName) {
     return projectListArray;
 }
 
+// if not return null means project exists
+export function checkProject(projectName) {
+    if (localStorage.getItem(projectName) !== null) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 // save the list
 export function saveList(projectName, list) 
 {

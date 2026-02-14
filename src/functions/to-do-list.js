@@ -13,3 +13,8 @@ export default function saveAsList(item, projectName) {
         saveList(projectName, list);
     }
 }
+
+
+// function deleteItem(id) {
+
+// }
