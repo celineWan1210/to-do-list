@@ -5,8 +5,6 @@ export function selectList(projectName) {
     const projectListString = localStorage.getItem(projectName);
     const projectListArray = JSON.parse(projectListString);
 
-    console.log(projectListString);
-    console.log(projectListArray);
     return projectListArray;
 }
 
@@ -26,7 +24,9 @@ export function checkItem(projectName, itemTitle) {
 
     if (filterItem.length === 0) {
         return false;
-    } 
+    } else {
+        return true;
+    }
 }
 
 // save the list

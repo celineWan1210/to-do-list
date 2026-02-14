@@ -16,15 +16,12 @@ class ToDoItem {
 export function createTodoItem(title, projectName) {
     if (checkItem(projectName, title) === false) {
         const item = new ToDoItem(title);
-        console.log("item created");
+        console.log(`Item with title ${title} created`);
         saveAsList(item, projectName);
         return item;
     } else {
-        console.log("Item exists. No new item created");
+        console.log(`Item with title ${title} exists. No new item created`);
     }
 }
 
-export function returnItemId(item) {
-    return item.id
-}
 
