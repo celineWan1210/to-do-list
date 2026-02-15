@@ -12,6 +12,7 @@ class ToDoItem {
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
+        this.priority = false;
     }
 }
 
@@ -19,10 +20,20 @@ function createDueDate(year, month, day) {
     return new Date(year, month, day);
 }
 
+function checkItemPriority(item, itemPriority) {
+    if (itemPriority) {
+        item.priority = true;
+        console.log(`Item with title ${item.title} is important`);
+    } else {
+        console.log(`Item with title ${item.title} is not important`);
+    }
+}
+
 // create new Item
-export function createTodoItem(title, description, year, month, day, projectName) {
+export function createTodoItem(title, description, year, month, day, itemPriority, projectName) {
     if (checkItem(projectName, title) === false) {
         const item = new ToDoItem(title, description, createDueDate(year, month, day));
+        checkItemPriority(item, itemPriority);
         console.log(`Item with title ${title} created`);
         saveAsList(item, projectName);
         return item;
@@ -30,5 +41,4 @@ export function createTodoItem(title, description, year, month, day, projectName
         console.log(`Item with title ${title} exists. No new item created`);
     }
 }
-
 

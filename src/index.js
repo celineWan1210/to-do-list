@@ -12,10 +12,11 @@ function start() {
     //  item can created if it does not exists before and save
     const item1Title = "Reading";
     // Reminder for DATE: its year month(december is 11) day
-    createTodoItem(item1Title, "Read 5 books", 2025, 11, 6, projectName);
+    // true if high priority
+    createTodoItem(item1Title, "Read 5 books", 2025, 11, 6, true, projectName);
 
     const item2Title = "Study";
-    createTodoItem(item2Title, "Study for 2 hours", 2025, 11, 10, projectName);
+    createTodoItem(item2Title, "Study for 2 hours", 2025, 8, 10, false, projectName);
 }
 
 start();
