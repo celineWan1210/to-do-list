@@ -15,3 +15,4 @@ export default function createNewProject(projectName) {
     }
 }
 
+// delete the project

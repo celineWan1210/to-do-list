@@ -1,4 +1,5 @@
-import createProject from "./functions/createProject.js"
+import { deleteProject } from "./functions/localStorage.js";
+import createProject from "./functions/project.js"
 import {createTodoItem} from "./functions/to-do-item.js"
 import { deleteItem } from "./functions/to-do-list.js"
 
@@ -14,7 +15,7 @@ function start() {
     createTodoItem(item1Title, "Read 5 books", 2025, 11, 6, projectName);
 
     const item2Title = "Study";
-        createTodoItem(item2Title, "Study for 2 hours", 2025, 11, 10, projectName);
+    createTodoItem(item2Title, "Study for 2 hours", 2025, 11, 10, projectName);
 }
 
 start();

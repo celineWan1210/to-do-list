@@ -29,6 +29,14 @@ export function checkItem(projectName, itemTitle) {
     }
 }
 
+// select project
+export function deleteProject(projectName) {
+    if (checkProject(projectName)) {
+        localStorage.removeItem(projectName);
+        console.log("project deleted");
+    }
+}
+
 // save the list
 export function saveList(projectName, list) 
 {
