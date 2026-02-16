@@ -17,6 +17,7 @@ function start() {
     createTodoItem(item1Title, "Read 5 books", 2025, 11, 6, true, projectName);
     createCheckListItem(projectName, item1Title, "Read Atomic Habits");
     createCheckListItem(projectName, item1Title, "Read Atomic Habits");
+    createCheckListItem(projectName, item1Title, "Read Yellow face");
 
     const item2Title = "Study";
     createTodoItem(item2Title, "Study for 2 hours", 2025, 8, 10, false, projectName);
