@@ -43,3 +43,11 @@ export function saveList(projectName, list)
     const projectListString = JSON.stringify(list);
     localStorage.setItem(projectName, projectListString);
 }
+
+export function selectCheckList(projectName, itemTitle) {
+    const list = selectList(projectName);
+    if (checkItem(projectName, itemTitle)) {
+        const filterItem = list.filter(item => item.title === itemTitle)[0];
+        return filterItem.checkList;
+    }
+}

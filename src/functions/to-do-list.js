@@ -32,9 +32,3 @@ export function deleteItem(projectName, itemTitle) {
     console.log(`Item with itemID ${itemID} deleted and save into local storage`);
 }
 
-// filter list to show earlier due date first
-function filterList(list) {
-    if (list.length > 1) {
-        console.log("filter list");
-    }
-}

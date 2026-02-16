@@ -13,6 +13,7 @@ class ToDoItem {
         this.description = description;
         this.dueDate = dueDate;
         this.priority = false;
+        this.checkList = [];
     }
 }
 
@@ -32,9 +33,14 @@ function checkItemPriority(item, itemPriority) {
 // create new Item
 export function createTodoItem(title, description, year, month, day, itemPriority, projectName) {
     if (checkItem(projectName, title) === false) {
+        // create item
         const item = new ToDoItem(title, description, createDueDate(year, month, day));
-        checkItemPriority(item, itemPriority);
         console.log(`Item with title ${title} created`);
+
+        // check priority 
+        checkItemPriority(item, itemPriority);
+
+        // save into the list
         saveAsList(item, projectName);
         return item;
     } else {
