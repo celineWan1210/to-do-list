@@ -14,6 +14,7 @@ class ToDoItem {
         this.dueDate = dueDate;
         this.priority = false;
         this.checkList = [];
+        this.complete = false;
     }
 }
 

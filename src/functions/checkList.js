@@ -1,4 +1,4 @@
-import { selectCheckList, saveList, selectList } from "./localStorage.js";
+import { selectCheckList, saveList, selectList, selectItem } from "./localStorage.js";
 import { v4 as uuidv4 } from 'uuid';
 
 class checkList {
@@ -68,7 +68,29 @@ export function completeCheckListItem(projectName, itemID, checkItemID) {
     const checkListItem = selectCheckItem(checkListArray, checkItemID);
 
     checkListItem.complete = true;
+    checkCheckListItem(projectName, itemID);
     saveCheckListIntoLocalStorage(projectName, itemID, checkListArray);
+}
 
-    console.log(checkListItem);
+function saveCheckListCompletionIntoLocalStorage(projectName, itemID) {
+    const list = selectList(projectName);
+    const item = list.filter((item) => item.id === itemID)[0];
+    item.complete = true;
+
+    saveList(projectName, list);
+}
+
+
+function checkCheckListItem(projectName, itemID) {
+    const checkListArray = selectCheckList(projectName, itemID);
+
+    const checkListArrayFilter = checkListArray.filter((checkListItem) => checkListItem.complete === false); 
+
+    // if all is completed (no false) then update the localstorage todolist
+    if (checkListArrayFilter.length === 0) {
+        saveCheckListCompletionIntoLocalStorage(projectName, itemID);
+        console.log("All checklist is completed and updated in local Storage");
+    } else {
+        console.log("Not yet complete all checklist");
+    }
 }

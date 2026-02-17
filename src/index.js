@@ -12,7 +12,7 @@ function start() {
 
     //  item can created if it does not exists before and save
     const item1Title = "Reading";
-    const item1ID = "8771184a-ba1a-4d15-81be-f2deb6ffa6a5";
+    const item1ID = "8fc6c53f-7a55-4b5c-a51f-6390cbc6fb0c";
 
     // Reminder for DATE: its year month(december is 11) day
     // true if high priority
@@ -20,13 +20,16 @@ function start() {
 
     // check list item under to do item
     createCheckListItem(projectName, item1ID, "Read Atomic Habits");
-    const checkListItem1ID = "2d08cada-4cbe-4267-8217-0fd7c4a999cd";
+    const checkListItem1ID = "03b3d91f-f343-42a8-8ff3-51a7e3b47b37";
 
-    createCheckListItem(projectName, item1ID, "Read Yellow Face");
-    const checkListItem2ID = "f05768c5-673d-457c-8190-85be75eeea5e";
+    // createCheckListItem(projectName, item1ID, "Read Yellow Face");
+    // const checkListItem2ID = "";
     // // delete check list item
     // deleteCheckListItem(projectName, item1Title, "ID");
     completeCheckListItem(projectName, item1ID, checkListItem1ID);
+
+
+    createTodoItem("Swimming", "Read 5 books", 2025, 11, 6, true, projectName);
 
 
     const projectName2 = "Project 2";
