@@ -9,17 +9,17 @@ class checkList {
     }
 }
 
-function saveCheckListIntoLocalStorage(projectName, itemTitle, checklist) {
+function saveCheckListIntoLocalStorage(projectName, itemID, checklist) {
     // select the whole project list
     const list = selectList(projectName);
     // select item
-    const item = list.filter((item) => item.title === itemTitle)[0];
+    const item = list.filter((item) => item.id === itemID)[0];
     item.checkList = checklist;
 
     saveList(projectName, list);
 }
 
-function saveCheckList(checkListArray, checkListTitle, projectName, itemtitle) {
+function saveCheckList(checkListArray, checkListTitle, projectName, itemID) {
     // check if there is same title in the array
     const filterArray = checkListArray.filter((checkListItem) => checkListItem.title === checkListTitle);
     
@@ -29,38 +29,46 @@ function saveCheckList(checkListArray, checkListTitle, projectName, itemtitle) {
         checkListArray.push(checkListItem);
 
         // add to the local storage
-        saveCheckListIntoLocalStorage(projectName, itemtitle, checkListArray);
+        saveCheckListIntoLocalStorage(projectName, itemID, checkListArray);
         console.log(`New check list item with title ${checkListTitle} is created and added to local storage`);
     } else {
         console.log(`Check list item with name ${checkListTitle} is created before`);
     }
 }
 
-function selectCheckItemID(checkListArray, checkItemTitle) {
-    const filterArray = checkListArray.filter((checkListItem) => checkListItem.title === checkItemTitle);
+function selectCheckItem(checkListArray, checkItemID) {
+    const filterArray = checkListArray.filter((checkListItem) => checkListItem.id === checkItemID);
     if (filterArray.length != 0) {
-        const ID = filterArray[0].id;
-        console.log(`Item with ${checkItemTitle} existed`);
-        return ID;
+        console.log(`Item with ID ${checkItemID} exist`);
+        return filterArray[0];
     } else {
-        console.log(`No item with title ${checkItemTitle} exist`);
+        console.log(`No item with ID ${checkItemID} exist`);
     }
 }
 
-export function deleteCheckListItem(projectName, itemTitle, checkItemTitle) {
-    const checkListArray = selectCheckList(projectName, itemTitle);
-    const checkListItemID = selectCheckItemID(checkListArray, checkItemTitle);
+export function deleteCheckListItem(projectName, itemID, checkItemID) {
+    const checkListArray = selectCheckList(projectName, itemID);
 
     // filter checkListItemID out
-    const filteredArray = checkListArray.filter((checkListItem) => checkListItem.id !== checkListItemID);
+    const filteredArray = checkListArray.filter((checkListItem) => checkListItem.id !== checkItemID);
 
     // save it
-    saveCheckListIntoLocalStorage(projectName, itemTitle, filteredArray);
-    console.log(`Item with title ${checkItemTitle} is deleted and updated in local storage`);
+    saveCheckListIntoLocalStorage(projectName, itemID, filteredArray);
+    console.log(`Item with id ${checkItemID} is deleted and updated in local storage`);
 }
 
-export function createCheckListItem(projectName, itemtitle, checkListTitle) {
-    const checkListArray = selectCheckList(projectName, itemtitle);
+export function createCheckListItem(projectName, itemID, checkListTitle) {
+    const checkListArray = selectCheckList(projectName, itemID);
 
-    saveCheckList(checkListArray, checkListTitle, projectName, itemtitle);
+    saveCheckList(checkListArray, checkListTitle, projectName, itemID);
+}
+
+export function completeCheckListItem(projectName, itemID, checkItemID) {
+    const checkListArray = selectCheckList(projectName, itemID);
+    const checkListItem = selectCheckItem(checkListArray, checkItemID);
+
+    checkListItem.complete = true;
+    saveCheckListIntoLocalStorage(projectName, itemID, checkListArray);
+
+    console.log(checkListItem);
 }

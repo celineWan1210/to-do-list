@@ -1,4 +1,4 @@
-import {selectList, saveList, checkItem} from "./localStorage.js"
+import {selectList, saveList} from "./localStorage.js"
 
 // save todoItem to a list
 export function saveAsList(item, projectName) {
@@ -8,23 +8,9 @@ export function saveAsList(item, projectName) {
     console.log(`Item with title ${item.title} saved to local storage`);
 }
 
-// select item using local storage
-function returnItemId(projectName, itemTitle) {
-    if (checkItem(projectName, itemTitle)) {
-        
-        // filter to find the item id
-        const list = selectList(projectName); 
-        const item = list.filter((item) => item.title === itemTitle);
-        const itemID = item[0].id;
-        console.log(`Item exists, ID selected: ${itemID}`);
-        return itemID;
-    }
-}
-
 // delete item using itemID
-export function deleteItem(projectName, itemTitle) {
+export function deleteItem(projectName, itemID) {
     const list = selectList(projectName);
-    const itemID = returnItemId(projectName, itemTitle);
 
     // filter list with deleted id
     const filteredList = list.filter((item) => item.id !== itemID);

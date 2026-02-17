@@ -18,9 +18,9 @@ export function checkProject(projectName) {
 }
 
 // check if same name item had been created before
-export function checkItem(projectName, itemTitle) {
+export function checkItem(projectName, title) {
     const list = selectList(projectName);
-    const filterItem = list.filter(item => item.title === itemTitle);
+    const filterItem = list.filter(item => item.title === title);
 
     if (filterItem.length === 0) {
         return false;
@@ -29,7 +29,7 @@ export function checkItem(projectName, itemTitle) {
     }
 }
 
-// remove project
+// select project
 export function deleteProject(projectName) {
     if (checkProject(projectName)) {
         localStorage.removeItem(projectName);
@@ -44,10 +44,9 @@ export function saveList(projectName, list)
     localStorage.setItem(projectName, projectListString);
 }
 
-export function selectCheckList(projectName, itemTitle) {
+export function selectCheckList(projectName, itemID) {
     const list = selectList(projectName);
-    if (checkItem(projectName, itemTitle)) {
-        const filterItem = list.filter(item => item.title === itemTitle)[0];
-        return filterItem.checkList;
-    }
+
+    const filterItem = list.filter(item => item.id === itemID)[0];
+    return filterItem.checkList;
 }
