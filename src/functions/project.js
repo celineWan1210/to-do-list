@@ -14,5 +14,3 @@ export default function createNewProject(projectName) {
         console.log(`Project with project name ${projectName} exists`);
     }
 }
-
-// delete the project

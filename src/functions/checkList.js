@@ -36,6 +36,29 @@ function saveCheckList(checkListArray, checkListTitle, projectName, itemtitle) {
     }
 }
 
+function selectCheckItemID(checkListArray, checkItemTitle) {
+    const filterArray = checkListArray.filter((checkListItem) => checkListItem.title === checkItemTitle);
+    if (filterArray.length != 0) {
+        const ID = filterArray[0].id;
+        console.log(`Item with ${checkItemTitle} existed`);
+        return ID;
+    } else {
+        console.log(`No item with title ${checkItemTitle} exist`);
+    }
+}
+
+export function deleteCheckListItem(projectName, itemTitle, checkItemTitle) {
+    const checkListArray = selectCheckList(projectName, itemTitle);
+    const checkListItemID = selectCheckItemID(checkListArray, checkItemTitle);
+
+    // filter checkListItemID out
+    const filteredArray = checkListArray.filter((checkListItem) => checkListItem.id !== checkListItemID);
+
+    // save it
+    saveCheckListIntoLocalStorage(projectName, itemTitle, filteredArray);
+    console.log(`Item with title ${checkItemTitle} is deleted and updated in local storage`);
+}
+
 export function createCheckListItem(projectName, itemtitle, checkListTitle) {
     const checkListArray = selectCheckList(projectName, itemtitle);
 

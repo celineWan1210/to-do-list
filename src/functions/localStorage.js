@@ -29,7 +29,7 @@ export function checkItem(projectName, itemTitle) {
     }
 }
 
-// select project
+// remove project
 export function deleteProject(projectName) {
     if (checkProject(projectName)) {
         localStorage.removeItem(projectName);
