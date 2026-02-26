@@ -2,7 +2,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 :root {
@@ -27,7 +27,8 @@ body {
 }
 
 .footer {
-    height: 5vh;
+    height: 7vh;
+    border-top: 1px solid var(--secondary-color);
 }
 
 /* arrange footer for both side bar and main content */
@@ -35,16 +36,21 @@ body {
     background-color: var(--main-color);
 }
 
+.sidebar {
+    border-right: 1px solid var(--secondary-color);
+}
+
 .side-bar-end, .main-content-footer {
     display: flex;
     align-items: center;
-
-    border-top: 1px solid var(--secondary-color);
 }
 
 .side-bar-end {
     justify-content: center;
     gap: 12px;
+
+    border-right: 1px solid var(--secondary-color);
+    background-color: var(--main-color);
 }
 
 .main-content-footer {
