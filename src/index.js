@@ -1,7 +1,7 @@
 import { deleteProject } from "./functions/localStorage.js";
 import createProject from "./functions/project.js"
 import {createTodoItem} from "./functions/to-do-item.js"
-import { deleteItem } from "./functions/to-do-list.js"
+import { deleteItem, editTodoItem } from "./functions/to-do-list.js"
 import { createCheckListItem, deleteCheckListItem, completeCheckListItem, editCheckListItem, uncheckCheckListItem } from "./functions/checkList.js";
 
 // create default project and save as JSON
@@ -12,7 +12,7 @@ function start() {
 
     //  item can created if it does not exists before and save
     const item1Title = "Reading";
-    const item1ID = "f94e84f2-6d96-47a6-9b44-9023ba5033db";
+    const item1ID = "ee7f5f67-0d5f-4b56-be90-b5093ef0479f";
 
     // Reminder for DATE: its year month(december is 11) day
     // true if high priority
@@ -20,15 +20,16 @@ function start() {
 
     // check list item under to do item
     createCheckListItem(projectName, item1ID, "Read Atomic Habits");
-    const checkListItem1ID = "0d5600f6-3bec-4bfd-b22d-1f98791ae884";
+    const checkListItem1ID = "bdde9c37-410b-400c-a564-ff7626d1c6fe";
 
-    // createCheckListItem(projectName, item1ID, "Read Yellow Face");
-    // const checkListItem2ID = "";
     // // delete check list item
     // deleteCheckListItem(projectName, item1Title, "ID");
     completeCheckListItem(projectName, item1ID, checkListItem1ID);
     // edit the check list title
     // editCheckListItem(projectName, item1ID, checkListItem1ID, "New title");
+
+    const item1EditedTitle = "Reading more";
+    // editTodoItem(item1EditedTitle, "Read 6 books", 2025, 11, 6, false, projectName, item1ID);
 }
 
 start();

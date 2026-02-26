@@ -63,23 +63,13 @@ export function createCheckListItem(projectName, itemID, checkListTitle) {
     saveCheckList(checkListArray, checkListTitle, projectName, itemID);
 }
 
-export function completeCheckListItem(projectName, itemID, checkItemID) {
-    const checkListArray = selectCheckList(projectName, itemID);
-    const checkListItem = selectCheckItem(checkListArray, checkItemID);
-
-    checkListItem.complete = true;
-    checkCheckListItem(projectName, itemID);
-    saveCheckListIntoLocalStorage(projectName, itemID, checkListArray);
-}
-
 function saveCheckListCompletionIntoLocalStorage(projectName, itemID) {
     const list = selectList(projectName);
     const item = list.filter((item) => item.id === itemID)[0];
     item.complete = true;
-
+    
     saveList(projectName, list);
 }
-
 
 function checkCheckListItem(projectName, itemID) {
     const checkListArray = selectCheckList(projectName, itemID);
@@ -94,6 +84,16 @@ function checkCheckListItem(projectName, itemID) {
         console.log("Not yet complete all checklist");
     }
 }
+
+export function completeCheckListItem(projectName, itemID, checkItemID) {
+    const checkListArray = selectCheckList(projectName, itemID);
+    const checkListItem = selectCheckItem(checkListArray, checkItemID);
+
+    checkListItem.complete = true;
+    saveCheckListIntoLocalStorage(projectName, itemID, checkListArray);
+    checkCheckListItem(projectName, itemID);
+}
+
 
 export function editCheckListItem(projectName, itemID, checkListID, newTitle) {
     const checkListArray = selectCheckList(projectName, itemID);
