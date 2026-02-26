@@ -94,3 +94,13 @@ function checkCheckListItem(projectName, itemID) {
         console.log("Not yet complete all checklist");
     }
 }
+
+export function editCheckListItem(projectName, itemID, checkListID, newTitle) {
+    const checkListArray = selectCheckList(projectName, itemID);
+    const checkListItem = selectCheckItem(checkListArray, checkListID);
+
+    checkListItem.title = newTitle;
+    saveCheckListIntoLocalStorage(projectName, itemID, checkListArray);
+    console.log("Item name edited");
+}
+
