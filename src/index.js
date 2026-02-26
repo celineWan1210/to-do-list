@@ -4,6 +4,8 @@ import {createTodoItem} from "./functions/to-do-item.js"
 import { deleteItem, editTodoItem } from "./functions/to-do-list.js"
 import { createCheckListItem, deleteCheckListItem, completeCheckListItem, editCheckListItem, uncheckCheckListItem } from "./functions/checkList.js";
 
+import './style.css';
+
 // create default project and save as JSON
 function start() {
     // start by createed a default object once
@@ -12,7 +14,7 @@ function start() {
 
     //  item can created if it does not exists before and save
     const item1Title = "Reading";
-    const item1ID = "ee7f5f67-0d5f-4b56-be90-b5093ef0479f";
+    const item1ID = "99f18eb0-b87e-4fc5-8763-1ca6ce505f40";
 
     // Reminder for DATE: its year month(december is 11) day
     // true if high priority
@@ -20,11 +22,11 @@ function start() {
 
     // check list item under to do item
     createCheckListItem(projectName, item1ID, "Read Atomic Habits");
-    const checkListItem1ID = "bdde9c37-410b-400c-a564-ff7626d1c6fe";
+    const checkListItem1ID = "edcd434f-baf1-43b8-96fd-0d5c128bcb75";
 
     // // delete check list item
     // deleteCheckListItem(projectName, item1Title, "ID");
-    completeCheckListItem(projectName, item1ID, checkListItem1ID);
+    // completeCheckListItem(projectName, item1ID, checkListItem1ID);
     // edit the check list title
     // editCheckListItem(projectName, item1ID, checkListItem1ID, "New title");
 

@@ -4,52 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
 </head>
 <body>
-    <div class="sidebar">
-        <div class="project-toggle">
-            Default Project
+    <div class="content">
+        <div class="sidebar">
+            <div class="project-title">
+                Project List
+
+                <div class="projects">
+                    <p class="project-1">Default Project</p>
+                </div>
+
+            </div>
         </div>
 
-        <div class="side-bar-end">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>
-            <p>Add Project</p>
+        <div class="main-content">
+            <div class="project-info">
+                <div class="project-header">
+                    <div class="project-title">
+                        Default Project
+                    </div>
+                </div>
+                <div class="desc">
+                    This is a default project. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                </div>
+                <div class="project-1">
+                    <div class="project-title">
+                        Study
+                    </div>
+                    <div class="project-priority">
+                        Important
+                    </div>
+                    <div class="project-date">
+                        24/8/25
+                    </div>
+
+                    <div class="details">
+                        <details>
+                            <summary>CheckList</summary>
+                            <input type="checkbox" id="check-list-1" name="check-list-1">
+                            <label for="check-list-1">FIT1045</label>
+                        </details>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="main-content">
-        <div class="project-info">
-            <div class="project-header">
-                <div class="project-title">
-                    Default Project
-                </div>
-                <div class="add-to-do-item">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg>
-                    <p>Add To Do Item</p>
-                </div>
-            </div>
-            <div class="desc">
-                This is a default project. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            </div>
-            <div class="project-unexpand">
-                <div class="project-title">
-                    Study
-                </div>
-                <div class="project-priority">
-                    Important
-                </div>
-                <div class="project-date">
-                    24/8/25
-                </div>
-            </div>
 
-            <div class="project-unexpand">
-                <div class="project-title">
-                    Reading
-                </div>
-                <div class="project-date">
-                    24/8/25
-                </div>
+    <div class="footer">
+        <div class="side-bar-end">
+            <span class="material-symbols-outlined">add</span>
+            <p>Add Project</p>
+        </div>
+
+        <div class="main-content-footer">
+            <div class="add-to-do">
+                <span class="material-symbols-outlined">
+                    add
+                </span>
+            </div>
+            <div class="edit-to-do">
+                <span class="material-symbols-outlined">
+                    edit
+                </span>
+            </div>
+            <div class="delete-todo">
+                <span class="material-symbols-outlined">
+                    delete
+                </span>
             </div>
         </div>
     </div>
