@@ -3,11 +3,18 @@
     margin: 0px;
     box-sizing: border-box;
     /* border: 1px solid red; */
+    font-family: 'Open Sans', sans-serif;
 }
 
 :root {
     --main-color: #eeeeee;
     --secondary-color: #393e46;
+
+    --bold: 900;
+    --font-size: 24px;
+    
+    --gap-size: 24px;
+    --smaller-gap-size: 12px;
 }
 
 body {
@@ -47,7 +54,7 @@ body {
 
 .side-bar-end {
     justify-content: center;
-    gap: 12px;
+    gap: var(--smaller-gap-size);
 
     border-right: 1px solid var(--secondary-color);
     background-color: var(--main-color);
@@ -55,4 +62,40 @@ body {
 
 .main-content-footer {
     justify-content: space-around;
+}
+
+/* side bar (project toggle) */
+.sidebar {
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-size);
+}
+
+.project-title {
+    font-weight: var(--bold);
+    font-size: var(--font-size);
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smaller-gap-size);
+}
+
+.project-list  {
+    list-style-type: none;
+}
+
+.project-list > li {
+    display: flex;
+    gap: 8px;
+
+    align-items: center;
+}
+
+.project-list .project-title {
+    font-weight: normal;
+    font-size: 16px;
 }
