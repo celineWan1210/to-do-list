@@ -12,9 +12,12 @@
 
     --bold: 900;
     --font-size: 24px;
+    --font-size-smaller: 18px;
     
     --gap-size: 24px;
     --smaller-gap-size: 12px;
+
+    --card-background-color: #A7C7E7;
 }
 
 body {
@@ -54,7 +57,6 @@ body {
 
 .side-bar-end {
     justify-content: center;
-    gap: var(--smaller-gap-size);
 
     border-right: 1px solid var(--secondary-color);
     background-color: var(--main-color);
@@ -97,5 +99,54 @@ body {
 
 .project-list .project-title {
     font-weight: normal;
-    font-size: 16px;
+    font-size: var(--font-size-smaller);
+}
+
+.main-content {
+    padding: 24px;
+}
+
+.project-header > .project-title {
+    font-size: 32px;
+}
+.project-header > .desc {
+    line-height: 1.5;
+    margin: 8px 0px;
+}
+
+/* to-do-item */
+.to-do-item {
+    background-color: var(--card-background-color);
+    padding: 24px;
+    margin-top: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--smaller-gap-size);
+
+    border-radius: 8px;
+}
+.item-basic-info {
+    display: flex;
+    justify-content: space-between;
+}
+.left-side {
+    display: flex;
+    gap: var(--smaller-gap-size);
+}
+.item-title {
+    font-weight: var(--bold);
+    font-size: 32px;
+}
+.item-priority {
+    background-color: #eac4d5;
+    align-self: center;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 0.5px solid red;
+}
+.item-date {
+    align-self: center;
+    font-size: 18px;
+    font-weight: var(--bold);
 }
